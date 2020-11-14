@@ -1,0 +1,3 @@
+10001|Nguyen Dinh Huan|huannd0101|Huan1234*|huannd0101@gmail.com|0375417808|12/11/2020
+10002|Bui Tat Trung|trungtt0101|Trung1234*|tattrung0101@gmail.com|0987654321|13/11/2020
+10003|Nguyen Anh Linh|linhna0101|Linh1234*|Linhna0101@gmail.com|0123456789|14/11/2020
