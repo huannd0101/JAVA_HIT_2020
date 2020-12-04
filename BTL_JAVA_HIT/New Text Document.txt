@@ -1,0 +1,32 @@
+10000|Nguyen Dinh Huan|19|0375417808|Dien Bien|Nam|huannd0101
+15000|Bui Tat Trung|20|0987654321|Ha Noi|Nam|trungbt0101
+
+12345*28/11/2020*huannd0101*31000|Coca Cola|10|10.0|Gas Drink*32001|Choco Pie|1|42.0|Rice
+11395*27/11/2020*trungbt0101*22001|Panta|10|1700000.0|Drink*31000|Coca Cola|10|17000.0|Gas Drink*32001|Choco Pie|1|42.0|Rice
+12346*10/10/2020**22001|Xuc xic|2|5000.0|FastFood
+11398*27/11/2020*trungbt0101*22001|Panta|10|17000.0|Drink*31000|Coca Cola|10|17000.0|Gas Drink*32001|Choco Pie|1|42.0|Rice
+11397*27/11/2020*trungbt0101*22001|Panta|10|17000.0|Drink*31000|Coca Cola|1|17000.0|Gas Drink*32001|Choco Pie|1|42.0|Rice
+11396*27/11/2020*trungbt0101*22001|Panta|10|17000.0|Drink*31000|Coca Cola|10|17000.0|Gas Drink*32001|Choco Pie|1|42.0|Rice
+
+10004|Vu Van Doan|doanvv0101|Doan1234*|doanvv0101@gmail.com|0352149675|14/11/2020
+10005|Tran Van Dung|dungtv0101|Dung1234*|dungtv0101@gmail.com|0987654321|14/11/2020
+10001|Nguyen Dinh Huan|huannd0101|Huan675675*|huannd0101@gmail.com|0375417808|12/11/2020
+10003|Nguyen Anh Linh|linhna0101|Linh1234*|linhna0101@gmail.com|0123456789|14/11/2020
+10006|Vu Van Thang|thangvv0101|Thang1234*|thangvv0101@gmail.com|0123456788|14/11/2020
+10002|Bui Tat Trung|trungbt0101|Trung1234*|tattrung0101@gmail.com|0987654321|13/11/2020
+
+
+
+12345
+Shop of Huan
+0375417808	
+Doi 1 - Xa Pom Lot - Huyen Dien Bien - Tinh Dien Bien
+22001|Panta|10|17000.0|Drink*31000|Coca Cola|5|17000.0|Gas Drink*32001|Choco Pie|0|42000.0|Rice
+12346*2020/10/15 20:04:49**22001|Xuc xic|2|5000.0|FastFood+12345*2020/11/01 22:04:19*huannd0101*31000|Coca Cola|10|10.0|Gas Drink*32001|Choco Pie|1|42.0|Rice+11398*2020/08/12 22:16:49*trungbt0101*22001|Panta|10|17000.0|Drink*31000|Coca Cola|10|17000.0|Gas Drink*32001|Choco Pie|1|42.0|Rice+11395*2020/09/21 12:04:09*trungbt0101*22001|Panta|10|1700000.0|Drink*31000|Coca Cola|10|17000.0|Gas Drink*32001|Choco Pie|1|42.0|Rice+11397*2020/11/02 20:01:40*trungbt0101*22001|Panta|10|17000.0|Drink*31000|Coca Cola|1|17000.0|Gas Drink*32001|Choco Pie|1|42.0|Rice+11396*2020/12/01 22:04:49*trungbt0101*22001|Panta|10|17000.0|Drink*31000|Coca Cola|10|17000.0|Gas Drink*32001|Choco Pie|1|42.0|Rice+12347*2020/12/02 08:07:40*huannd0101*22001|Panta|3|17000.0|Drink+12348*2020/12/02 22:10:01*huannd0101*22001|Panta|1|17000.0|Drink*32001|Choco Pie|10|42000.0|Rice+12349*2020/12/02 22:16:04*hieubt0101*22001|Panta|9|17000.0|Drink*32001|Choco Pie|1|42000.0|Rice*31000|Coca Cola|10|17000.0|Gas Drink+12350*2020/12/02 23:56:57**22001|Panta|100|17000.0|Drink*32001|Choco Pie|10|42000.0|Rice+12351*2020/12/03 00:38:01*hieubt0101*32001|Choco Pie|1|42000.0|Rice*31000|Coca Cola|5|17000.0|Gas Drink
+10000|Nguyen Dinh Khanh|khanh0101|Khanh0101*|Khanhnd0101@gmail.com|0987654321|2020/12/02 21:26:56+10001|Nguyen Dinh Huan|huannd0101|Huan0101*|huannd0101@gmail.com|0375417808|2020/11/20 19:35:59+10002|Bui Tat Trung|trungbt0101|Trung1234*|tattrung0101@gmail.com|0987654321|2020/11/21 21:50:50+10003|Nguyen Anh Linh|linhna0101|Linh1234*|linhna0101@gmail.com|0123456789|2020/11/02 13:35:50+10004|Vu Van Doan|doanvv0101|Doan1234*|doanvv0101@gmail.com|0352149675|2020/11/14 09:03:09+10005|Tran Van Dung|dungtv0101|Dung1234*|dungtv0101@gmail.com|0987654321|2020/11/01 10:35:50+10006|Vu Van Thang|thangvv0101|Thang1234*|thangvv0101@gmail.com|0123456788|2020/11/20 17:35:59+10007|Bui Trung Hieu|hieubt0101|hieu0101*|0987654321|hieubt0101@gmail.com|2020/11/20 19:35:59+10008|Nguyen Dinh Huan|huan010101|Huan0101*|huannd0101@gmail.com|0375417808|2020/11/11 19:35:59+10009|Nguyen Van Khanh|khanhnd0101|Khanhnd0101*|khanhnd0101@gmail.com|0123456789|2020/12/02 21:33:11+10010|Nguyen Van Thanh|thanhnv0101|Thanhnv0101*|thanhnv0101@gmail.com|0987654321|2020/12/02 21:39:37+10011|Pham Minh Hau|haupm0101|Haupm0101*|haupm0101@gmail.com|02302212328|2020/12/03 00:01:09
+10001|Nguyen Dinh Huan|19|0375417808|Dien Bien|Nam|huannd0101+15000|Bui Tat Trung|20|0987654321|Ha Noi|Nam|trungbt0101+20000|Bui Trung Hieu|19|0123456789|Dien Bien|Nu|hieubt0101
+4500000.0
+
+
+
+
