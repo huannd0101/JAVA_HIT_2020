@@ -76,12 +76,12 @@ public class RunMain {
         System.out.println("15.Search and show info bill");
         System.out.println("16.Search and show info customer");
         System.out.println("17.Search and show info account");
-        System.out.println("18.Show info my shop and total revenue");
+        System.out.println("18.Show my info shop and total revenue");
         System.out.println("0. Exit");
         System.out.println("-------------------------------------------------------");
     }
     
-    //Controll of
+    //Controll of store owner
     private static void StoreOwner() {
         int choise = 0;
 
@@ -155,8 +155,6 @@ public class RunMain {
             }   
         }while(true);
     }
-
-
     
     private static void TitleFirstOfCustomer(){
         System.out.println("----------------------You are customer------------------");
@@ -184,6 +182,7 @@ public class RunMain {
         System.out.println("---------------------------------------------------------");
     }
     
+    //controll of customer
     private static void Customers() {
         int choise = 0;
         do {
@@ -296,7 +295,7 @@ public class RunMain {
                     ShowAllListProduct();
                     break;
                 case 2:
-                    ByProductOnline(user);
+                    BuyProductOnline(user);
                     break;
                 case 3:
                     ShowAllBillOfCustomer(user);
@@ -310,7 +309,7 @@ public class RunMain {
         }while(true);
     }
     
-    private static void ByProductOnline(String user){
+    private static void BuyProductOnline(String user){
         listPro = fileController.ReadProductsFromFile(PRODUCT_FILE_NAME);
         ShowAllListProduct();
         int quantily;
@@ -521,21 +520,7 @@ public class RunMain {
         System.out.println(bill);
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    //method of store owner
     private static void ShowAllListProduct() {
         listPro = fileController.ReadProductsFromFile(PRODUCT_FILE_NAME);
         for(Product i : listPro){
@@ -1965,6 +1950,5 @@ public class RunMain {
         tmp = fileController.getScanner().nextLine();
         tmp = fileController.getScanner().nextLine();
         System.out.println("Total revenue: " + fileController.getScanner().nextLine());
-
     }
 }

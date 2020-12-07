@@ -12,7 +12,6 @@ public class Bill {
     private String dateOfPurchase;
     private String userNameOfCus;
     private List<Product> productBought; 
-    
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     
     public Bill() {
