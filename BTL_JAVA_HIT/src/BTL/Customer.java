@@ -1,6 +1,8 @@
 
 package BTL;
 
+import Controller.FileController;
+import java.util.List;
 import java.util.Scanner;
 
 public class Customer {
@@ -120,5 +122,14 @@ public class Customer {
         this.gender = sc.nextLine();
         System.out.print("Enter customer UserName: ");
         this.userName = sc.nextLine();
+    }
+    
+    public Customer GetCustomerById(int id){
+        FileController fileController = new FileController();
+        List<Customer> listCus = fileController.ReadCustomersFromFile("CUSTOMER.DAT");
+        for(Customer i : listCus)
+            if(i.getCustomerId() == id)
+                return i;
+        return null;
     }
 }

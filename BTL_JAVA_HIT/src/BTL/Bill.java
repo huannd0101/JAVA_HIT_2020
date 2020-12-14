@@ -1,11 +1,9 @@
 
 package BTL;
 
+import Controller.FileController;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Bill {
     private int billId;
@@ -55,9 +53,7 @@ public class Bill {
     public void setProductBought(List<Product> productBought) {
         this.productBought = productBought;
     }
-
-   
-
+    
     @Override
     public String toString() {
         return "Bill{" + "billId=" + billId + 
@@ -150,6 +146,13 @@ public class Bill {
         return max;
     }
     
-    
+    public Bill GetBillById(int id){
+        FileController fileController = new FileController();
+        List<Bill> listBill = fileController.ReadBillsFromFile("BILL.DAT");
+        for(Bill i : listBill)
+            if(i.getBillId() == id)
+                return i;
+        return null;
+    }
     
 }

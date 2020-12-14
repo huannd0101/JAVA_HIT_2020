@@ -1,10 +1,9 @@
-package BTL;
+package Controller;
 
+import BTL.*;
 import java.io.*;
-import java.util.Scanner;
+import java.util.*;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 public class FileController {
     private FileWriter fileWriter;
@@ -266,40 +265,24 @@ public class FileController {
         String strAcc = "";
         String strCus = "";
         for(int i = 0; i < listPro.size(); i++){
-            strPro += listPro.get(i).getProductId() + "|" + listPro.get(i).getProductName() + "|" + 
-                listPro.get(i).getQuantily() + "|" + listPro.get(i).getPrice() + "|" + listPro.get(i).getProductType();
+            strPro += listPro.get(i).getProductId();
             if(i < listPro.size() - 1)
-                strPro += "*";
+                strPro += "|";
         }
         for(int j = 0; j < listBill.size(); j++){
-            strBill += listBill.get(j).getBillId() + "*" + listBill.get(j).getDateOfPurchase() + "*" 
-            + listBill.get(j).getUserNameOfCus() + "*";
-            List<Product> listPro2 = listBill.get(j).getProductBought();
-            String strPro2 = "";
-            for(int i = 0; i < listPro2.size(); i++){
-                totalRevenue += listPro2.get(i).getPrice() * listPro2.get(i).getQuantily();
-                strPro2 += listPro2.get(i).getProductId() + "|" + listPro2.get(i).getProductName() + "|" + 
-                    listPro2.get(i).getQuantily() + "|" + listPro2.get(i).getPrice() + "|" + listPro2.get(i).getProductType();
-                if(i < listPro2.size() - 1)
-                    strPro2 += "*";
-            }
-            strBill += strPro2;
+            strBill += listBill.get(j).getBillId();
             if(j < listBill.size() - 1)
-                strBill += "+";
+                strBill += "|";
         }
         for(int i = 0; i < listAcc.size(); i++){
-            strAcc += listAcc.get(i).getId() + "|" + listAcc.get(i).getFullName() + "|" + listAcc.get(i).getUserName() + "|" + 
-                listAcc.get(i).getPassword() + "|" + listAcc.get(i).getEmail() + "|" +  listAcc.get(i).getPhoneNumber()+ "|" + 
-                listAcc.get(i).getCreatAt();
+            strAcc += listAcc.get(i).getId();
             if(i < listAcc.size() - 1)
-                strAcc += "+";
+                strAcc += "|";
         }
         for(int i = 0; i < listCus.size(); i++){
-            strCus += listCus.get(i).getCustomerId() + "|" + listCus.get(i).getCustomerName() + "|" + listCus.get(i).getAge() + "|" + 
-                listCus.get(i).getCustomerPhoneNumber() + "|" + listCus.get(i).getCustomerAddress() + "|" + 
-                listCus.get(i).getGender() + "|" + listCus.get(i).getUserName();
+            strCus += listCus.get(i).getCustomerId();
             if(i < listCus.size() - 1)
-                strCus += "+";
+                strCus += "|";
         }
         printWriter.println(id);
         printWriter.println(storeName);
@@ -321,25 +304,30 @@ public class FileController {
         String name = scanner.nextLine();
         String phone = scanner.nextLine();
         String address = scanner.nextLine();
-        String arr[] = scanner.nextLine().split("\\*");
+        
+        String arr[] = scanner.nextLine().split("\\|");
         List<Product> listPro = new ArrayList<>();
         for(String i : arr){
-            listPro.add(CreateProductFromData(i));
+            Product pro = new Product();
+            listPro.add(pro.getProductById(Integer.parseInt(i)));
         }
-        arr = scanner.nextLine().split("\\+");
+        arr = scanner.nextLine().split("\\|");
         List<Bill> listBill = new ArrayList<>();
         for(String i : arr){
-            listBill.add(CreateBillFromData(i));
+            Bill bill = new Bill();
+            listBill.add(bill.GetBillById(Integer.parseInt(i)));
         }
-        arr = scanner.nextLine().split("\\+");
+        arr = scanner.nextLine().split("\\|");
         List<Account> listAcc = new ArrayList<>();
         for(String i : arr){
-            listAcc.add(CreateAccountFromData(i));
+            Account acc = new Account();
+            listAcc.add(acc.GetAccountById(Integer.parseInt(i)));
         }
-        arr = scanner.nextLine().split("\\+");
+        arr = scanner.nextLine().split("\\|");
         List<Customer> listCus = new ArrayList<>();
         for(String i : arr){
-            listCus.add(CreateCustomerFromData(i));
+            Customer cus = new Customer();
+            listCus.add(cus.GetCustomerById(Integer.parseInt(i)));
         }
         String revenue = scanner.nextLine();
         Store tmp = new Store(Integer.parseInt(id), name, phone, address, listPro, listBill,

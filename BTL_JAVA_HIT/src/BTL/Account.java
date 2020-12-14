@@ -1,9 +1,8 @@
 package BTL;
 
+import Controller.FileController;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class Account {
@@ -104,43 +103,36 @@ public class Account {
         }
         return max;
     }
-    
-    public void Input(){
-        Scanner sc = new Scanner(System.in);
-        Pattern pattern;
-        String regUserName = "^[a-zA-Z0-9]{6,}$";
-        String regPassword = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,}$";
-        String regPhone = "^[0-9\\-\\+]{9,15}$";
-        String regEmail = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-        boolean check = true;
-        boolean check2 = true;
-        CheckAll checkAll = new CheckAll();
-//        System.out.print("Enter id: ");
-//        do {
-//            this.id = sc.nextInt();
-//            sc.nextLine();
-//            check = checkAll.CheckIdAccount(id);
-//            if(check){
-//                System.out.print("Id is contain!\nPlease enter id again: ");
-//            }
-//        }while(check);
-        this.id = GetIdMaxOfListAccount() + 1;
+
+    Scanner sc = new Scanner(System.in);
+    Pattern pattern;
+    String regUserName = "^[a-zA-Z0-9]{5,}$";
+    String regPassword = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,}$";
+    String regPhone = "^[0-9\\-\\+]{9,15}$";
+    String regEmail = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+    boolean check = true;
+    boolean check2 = true;
+    CheckAll checkAll = new CheckAll();
         
-        System.out.print("Enter full name: ");
-        this.fullName = sc.nextLine();
+    public String InputUserName(){
+        String user;
         System.out.print("Enter user name: ");
         pattern = Pattern.compile(regUserName);
         do {
-            this.userName = sc.nextLine();
-            check = checkAll.CheckUserNameAccount(this.userName);
-            check2 = pattern.matcher(this.userName).find();
+            user = sc.nextLine();
+            check = checkAll.CheckUserNameAccount(user);
+            check2 = pattern.matcher(user).find();
             if(check){
                 System.out.print("UserName is contain!\nPlease enter userName again: ");
             }else if(!check2){
                 System.out.print("Please enter userName again: ");
             }
         }while(check == true || check2 == false);
-        
+        return user;
+    }
+    
+    public String InputPassword(){
+        String pass;
         System.out.print("Enter password: ");
         pattern = Pattern.compile(regPassword);
         String tmp;
@@ -153,34 +145,70 @@ public class Account {
         }while(!check2);
         System.out.print("Enter password once again: ");
         do {
-            this.password = sc.nextLine();
-            if(this.password.compareTo(tmp) != 0){
+            pass = sc.nextLine();
+            if(pass.compareTo(tmp) != 0){
                 System.out.print("Password is false!\nPlease enter again: ");
             }
-        }while(this.password.compareTo(tmp) != 0);
-        
+        }while(pass.compareTo(tmp) != 0);
+        return pass;
+    }
+    
+    public String InputPhoneNumber(){
+        String phone;
         System.out.print("Enter phone number: ");
         pattern = Pattern.compile(regPhone);
         do {
-            this.phoneNumber = sc.nextLine();
-            check2 = pattern.matcher(this.phoneNumber).find();
+            phone = sc.nextLine();
+            check2 = pattern.matcher(phone).find();
             if(!check2){
                 System.out.print("Enter phone number again: ");
             }
         }while(!check2);
-        
+        return phone;
+    }
+    
+    public String InputEmail(){
+        String mail;
         System.out.print("Enter email: ");
         pattern = Pattern.compile(regEmail);
         do {
-            this.email = sc.nextLine();
-            check2 = pattern.matcher(this.email).find();
+            mail = sc.nextLine();
+            check2 = pattern.matcher(mail).find();
             if(!check2){
                 System.out.print("Enter email again: ");
             }
         }while(!check2);
-        
+        return mail;
+    }
+    
+    public String Time(){
         Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        this.creatAt = simpleDateFormat.format(date);
+        return simpleDateFormat.format(date);
+    }
+    
+    public String InputFullName(){
+        System.out.print("Enter full name: ");
+        return sc.nextLine();
+    }
+    
+    public void Input(){
+        this.setId(GetIdMaxOfListAccount() + 1);
+        this.setFullName(InputFullName());
+        this.setUserName(InputUserName());
+        this.setPassword(InputPassword());
+        this.setPhoneNumber(InputPhoneNumber());
+        this.setEmail(InputEmail());
+        this.setCreatAt(Time());
+    }
+    
+    public Account GetAccountById(int id){
+        FileController fileController = new FileController();
+        List<Account> listAcc = fileController.ReadAccountFromFile("ACC.DAT");
+        for(Account i : listAcc){
+            if(i.getId() == id)
+                return i;
+        }
+        return null;
     }
 }
